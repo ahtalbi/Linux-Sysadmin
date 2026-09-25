@@ -25,7 +25,7 @@
 			address 10.0.2.15
 			netmask 255.255.255.0
 			gateway 10.0.2.2
-	20.2. ip addr add 10.0.2.15/14 dev enp0s3
+	20.2. ip addr add 10.0.2.15/24 dev enp0s3
 	20.3. ip route add default via 10.0.2.2
 	20.4 configure dns
 		set "nameserver 10.0.2.3" in /etc/resolv.conf
@@ -45,3 +45,8 @@
 24. systemctl start myservice 
 25. journalctl -u myservice
 26. systemctl status myservice		
+27. how to extend the lvm
+	27.1 check free space in the VG
+vgs
+lvextend -L +2G /dev/vg/var
+resize2fs /dev/vg/var
