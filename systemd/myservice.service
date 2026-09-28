@@ -1,0 +1,6 @@
+[Service]
+ExecStart=/home/script.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
