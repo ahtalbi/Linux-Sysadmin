@@ -1,7 +1,7 @@
 # Linux-Sysadmin
 ## in this project we are gonna learn how to set up an server with partitions mbr + lvm everything manual
 
-[photo] 0_projectPreview.jpg
+![photo](./assets/0_projectPreview.png)
 
 specify the name of the vm
 chose the iso image
@@ -26,7 +26,7 @@ secend make a lvm group that would manage our partitions and we made it to make 
 now we crate our logical volumes /, /home, /var, swap.
 now we link each logical volumes to a partition as mount points to the logical volumes realated
 we finish our partitioning 
-[photo] 1_partitioning.png
+![photo](./assets/1_partitioning.png)
 
 chose the mirror that is the closest to you
 then chose the proxy if you have one
@@ -34,7 +34,7 @@ after this for this project we are gonna chose just standart system utilities
 install the boot grub boot loader for better facilities when working on multiple oses on in the same time
 chose the disk that you want to install it in
 congratulations installtion completed but we still did not finish
-[photo] 2_inallationCompleted.png
+![photo](./assets/2_installationCompleted.png)
 
 now configuring the network in our machine to be static
 switch to sudo by ```su -``` se we can switch all what we need in the conf of ip
@@ -83,5 +83,5 @@ nameserver 10.0.2.3
 so you can test ping -c 3 google.com and it should not lost packet data
 
 congratulations you have now static ip but we still didnt finish
-[photo] 3_ipConfigured.png
+![photo](./assets/3_ipConfigured.png)
 
