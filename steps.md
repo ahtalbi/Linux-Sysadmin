@@ -36,6 +36,24 @@ chose the disk that you want to install it in
 congratulations installtion completed but we still did not finish
 ![photo](./assets/2_installationCompleted.png)
 
+now we are gonna exend the logical volume to make sure that our lvm is working good
+
+we need sudo so that we can change in the logical volume with the command ```su -```
+first we need to see our logical volumes
+we can see theme with the commnad ```lvs -o lv_name,lv_size```
+
+and we can change the size of one with this command to change in the config
+```
+lvreduce -L +3G /dev/vg/var
+```
+and this command to change in the file system
+```
+resize2fs /dev/vg/var
+```
+
+now we have completly change teh size of our lv succesfully
+![photo](./assets/3_checkLvm.png)
+
 now configuring the network in our machine to be static
 switch to sudo by ```su -``` se we can switch all what we need in the conf of ip
 now to know that we have configured the ip to be static 2 ways of verify the confige or with ip addr to see if the ip changes with the file it self before and after with the command and about the addresses default for debian you can find theme in https://docs.oracle.com/en/virtualization/virtualbox/7.2/user/networkingdetails.html
@@ -83,5 +101,5 @@ nameserver 10.0.2.3
 so you can test ping -c 3 google.com and it should not lost packet data
 
 congratulations you have now static ip but we still didnt finish
-![photo](./assets/3_ipConfigured.png)
+![photo](./assets/4_ipConfigured.png)
 
