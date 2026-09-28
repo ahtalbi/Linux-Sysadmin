@@ -20,6 +20,14 @@ set password for theroot
 set full name for the user
 set username for the user
 set password for the user
+if you want you can save the snapshot of your vm at any stage of your choice
+like this ```
+Open VirtualBox Manager.
+Select your Debian VM.
+Click Snapshots.
+Click Take / Take Snapshot.
+Give it a clear name, for example:```
+![photo](./assets/snapshot.png)
 now the good part the partitioning
 first make a pv for the whole disk and so the lvm can manage good
 secend make a lvm group that would manage our partitions and we made it to make the size of the partiontions dynamic not static
