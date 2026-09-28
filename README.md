@@ -307,11 +307,11 @@ systemctl status myservice
 ```
 We have like our service **successfully running** (`enabled` on the `Loaded` line and `active (running)` on the `Active` line, with its Main PID and its last output lines, which come from the journal), and if we shut it down it's gonna go up again or even if it does crash it's gonna run again.
 
-6. To verify if it's gonna work or no, we kill our process (`kill` sends SIGTERM like a plain `kill`, which systemd counts as a clean exit, so only `Restart=always` brings it back) and we check the status again:
+6. To verify if it's gonna work or no, we kill our process (`kill` sends SIGTERM like a plain `kill`, which systemd counts as a clean exit, so only `Restart=always` brings it back) and we check the system journal:
 ```bash
 systemctl show --property MainPID --value myservice
 kill <PID>
-systemctl status myservice
+journalctl -u myservice.service
 ```
 The service is `active (running)` again, with a new Main PID.
 
